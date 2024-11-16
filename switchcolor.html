@@ -1,0 +1,134 @@
+<html>
+    <head>
+        <title>Color Switcher</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+                transition: 0.3s ease;
+            }
+            body{
+                color: white;
+                padding-top:40px ;
+                background: deepskyblue;
+            }
+            .all .main{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index:1;
+                text-align: center;
+                color: white;
+            }
+            .all .main h1{
+                margin: 20% 0 0;
+                padding: 20px;
+                font-size: 80px;
+                font-family: sans-serif;
+            }
+            .all .main h3{
+                font-size: 30px;
+                font-family: sans-serif;
+            }
+            .all .choose{
+                position: absolute;
+                z-index: 2;
+                overflow: hidden;
+            }
+            .all .choose .colors{
+                float: left;
+                padding: 7px;
+                background: #ffeb3b;
+            }
+            .all .choose .colors ul li{
+               display: inline-block;
+               width: 25px;
+               height: 21.5px;
+               margin: 10px 5px;
+               cursor: pointer;
+               background: green;
+            }
+            .all .choose .theme-btn{
+                float: left;
+                color: black;
+                background: white;
+                padding: 22px 23px 23px 23px;
+            }
+            .all .choose .colors .theme ul li:nth-child(1){
+                background:#1a1a1a;}
+                .all .choose .colors .theme ul li:nth-child(2){
+                    background:pink;}
+            .all .choose .colors .theme ul li:nth-child(3){
+                background:#0084d7;
+            }
+            .all .choose .colors .theme ul li:nth-child(4){
+                background:#cf455c;
+            }
+            .all .choose .colors .theme ul li:nth-child(5){
+                background:#7b1fa2;
+            }
+            .all .choose .colors .theme ul li:nth-child(6){
+                background:#00acc1;
+            }
+            .all .choose .colors .theme ul li:nth-child(7){
+                background:#43a047;
+            }
+            .all .choose .colors .theme ul li:nth-child(8){
+                background:#009688;
+            }
+            .all .choose .colors .theme ul li:nth-child(3){
+                background:#34495e;
+            }
+            .active{
+                transform: translate(-355px);
+            }
+
+        </style>
+
+        <body>
+            <div class="all">
+                <div class="main">
+                    <h1 class="first">COLOR SWITCHER</h1>
+                    <h3 class="second">SELECT YOUR FAV COLOR</h3>
+                </div>
+                <div class="choose">
+                    <div class="colors active">
+                        <div class="theme">
+                            <ul class="theme-color">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        </div>
+                    </div>
+                    <span class="theme-btn active">
+                    <i class="fa fa-cog fa-lg fa-spin"></i>
+                </span>
+                </div>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+            <script>
+                $(document).ready(function() {
+                    // Toggle the active class to show/hide the color switcher
+                    $('span').click(function() {
+                        $('.colors, span').toggleClass('active');
+                    });
+            
+                    // Change the body's background color when a color is clicked
+                    $('ul.theme-color li').click(function() {
+                        $('body').css('background', $(this).css('background-color'));
+                    });
+                });
+            </script>
+            
+        </body>
+    </head>
+</html>
